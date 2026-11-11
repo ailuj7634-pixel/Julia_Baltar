@@ -1,0 +1,518 @@
+[ultimo-baile.html](https://github.com/user-attachments/files/34696525/ultimo-baile.html)
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Último Baile — Curta-metragem</title>
+<meta name="description" content="Uma morte, muitas suspeitas e uma verdade inesperada. Curta-metragem de suspense investigativo. Lançamento em 11 de novembro de 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#b3001b; --red-bright:#ff4d63; --black:#0a0708; --coal:#140d0f; --card:#1b1114;
+  --bone:#efe6df; --muted:#a99a93;
+  --display:'Cinzel Decorative','Cinzel',Georgia,serif;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --label:'Cinzel',Georgia,serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:100%}
+body{background:var(--black);color:var(--bone);font-family:var(--serif);font-size:1.2rem;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 1.5rem}
+section{padding:5rem 0;position:relative}
+h2{font-family:var(--display);font-size:clamp(1.8rem,4vw,2.6rem);color:var(--bone);text-align:center;margin-bottom:.6rem}
+.ornament{display:flex;align-items:center;justify-content:center;gap:1rem;color:var(--red);margin:0 auto 2.5rem;font-size:1.2rem}
+.ornament::before,.ornament::after{content:"";height:1px;width:90px;background:linear-gradient(90deg,transparent,var(--red))}
+.ornament::after{transform:scaleX(-1)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(10,7,8,.92);backdrop-filter:blur(6px);border-bottom:1px solid #2a1418}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;padding-top:.8rem;padding-bottom:.8rem}
+nav .brand{font-family:var(--display);color:var(--red-bright);font-size:1.05rem}
+nav ul{display:flex;gap:1.4rem;list-style:none;flex-wrap:wrap}
+nav a{font-family:var(--label);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--red-bright)}
+
+/* HERO */
+.hero{min-height:92vh;display:flex;align-items:center;text-align:center;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 30%,#3a0610 0%,#12090b 55%,#0a0708 100%)}
+/* IMAGEM DE FUNDO DO HERO: descomente e coloque o caminho da sua imagem
+.hero{background:linear-gradient(rgba(10,7,8,.7),rgba(10,7,8,.92)),url('imagens/hero.jpg') center/cover}
+*/
+.hero::before{content:"";position:absolute;inset:0;opacity:.07;
+  background:repeating-linear-gradient(90deg,#fff 0 1px,transparent 1px 70px)}
+.hero .wrap{position:relative}
+.logo{width:min(300px,60vw);margin:0 auto 1rem;filter:drop-shadow(0 0 22px rgba(225,10,42,.45))}
+.hero .kicker{font-family:var(--label);letter-spacing:.4em;font-size:.8rem;color:var(--muted);text-transform:uppercase}
+.hero h1{font-family:var(--display);font-weight:900;font-size:clamp(2.6rem,9vw,6rem);line-height:1.05;margin:.5rem 0 1rem;color:var(--bone);text-shadow:0 0 30px rgba(179,0,27,.6)}
+.hero h1 span{color:var(--red-bright)}
+.tagline{font-style:italic;font-size:clamp(1.2rem,2.6vw,1.7rem);color:#d9c9c0;max-width:680px;margin:0 auto 2rem}
+.btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{font-family:var(--label);letter-spacing:.2em;text-transform:uppercase;font-size:.85rem;padding:.9rem 2rem;border:1px solid var(--red);transition:.25s}
+.btn.solid{background:var(--red);color:#fff}
+.btn.solid:hover{background:var(--red-bright);box-shadow:0 0 24px rgba(225,10,42,.6)}
+.btn.ghost:hover{background:rgba(179,0,27,.2)}
+
+/* SINOPSE */
+.synopsis{background:var(--coal)}
+.synopsis p{max-width:760px;margin:0 auto;text-align:center;font-size:1.3rem}
+.synopsis p::first-letter{font-family:var(--display);font-size:3.6rem;color:var(--red-bright);float:left;line-height:.9;padding:.3rem .6rem 0 0}
+.shortsyn{max-width:700px;margin:2rem auto 0;padding:1.2rem 1.5rem;border-left:3px solid var(--red);background:rgba(179,0,27,.08);font-style:italic;color:#d9c9c0}
+
+/* TEASER */
+.video{max-width:900px;margin:0 auto;aspect-ratio:16/9;border:1px solid var(--red);box-shadow:0 0 50px rgba(179,0,27,.35);background:#000}
+.video iframe{width:100%;height:100%;border:0;display:block}
+.hint{text-align:center;color:var(--muted);font-size:.95rem;margin-top:.8rem}
+
+/* FICHA */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.info{background:var(--card);border:1px solid #2d171b;padding:1.2rem 1.4rem;transition:.25s}
+.info:hover{border-color:var(--red)}
+.info b{display:block;font-family:var(--label);font-weight:400;font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--red-bright);margin-bottom:.3rem}
+.info.wide{grid-column:1/-1}
+
+/* PERSONAGENS */
+.chars{background:var(--coal)}
+.char-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.2rem}
+.char{text-align:center}
+.photo{aspect-ratio:3/4;border:1px solid #3a1a20;background:linear-gradient(160deg,#2a1015,#0d0709);display:flex;align-items:center;justify-content:center;color:#c9a3aa;font-family:var(--label);font-size:.75rem;letter-spacing:.2em;text-align:center;overflow:hidden;margin-bottom:.7rem}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.char h3{font-family:var(--display);font-size:1.1rem;color:var(--bone)}
+.char small{color:var(--muted);font-family:var(--label);letter-spacing:.15em;font-size:.7rem;text-transform:uppercase}
+
+/* GALERIA */
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem}
+.gallery .photo{aspect-ratio:16/10;margin:0}
+
+/* CTA */
+.cta{text-align:center;background:radial-gradient(ellipse at center,#3a0610 0%,var(--black) 70%)}
+.cta blockquote{font-family:var(--display);font-size:clamp(1.6rem,4.5vw,3rem);line-height:1.3;max-width:900px;margin:0 auto 2rem;color:var(--bone)}
+.cta blockquote em{color:var(--red-bright);font-style:normal}
+
+/* PARCEIROS */
+.partners{text-align:center}
+.partner-row{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap}
+.partner{border:1px solid #2d171b;padding:1.6rem 2.8rem;background:var(--card)}
+.partner span{font-family:var(--label);letter-spacing:.3em;font-size:.7rem;color:var(--muted);text-transform:uppercase;display:block;margin-bottom:.4rem}
+.partner strong{font-family:var(--display);font-size:1.7rem;color:var(--bone)}
+.partner img{max-height:60px}
+
+footer{border-top:1px solid #2a1418;text-align:center;padding:2.5rem 1rem;color:var(--muted);font-size:1rem}
+footer .brand{font-family:var(--display);color:var(--red-bright);font-size:1.2rem;display:block;margin-bottom:.4rem}
+/* RODAPÉ: sobre, equipe e redes */
+footer{padding:3rem 1rem 2.5rem}
+footer .about{max-width:680px;margin:1rem auto 2rem;color:var(--bone)}
+footer h3{font-family:var(--label);letter-spacing:.3em;text-transform:uppercase;font-size:.85rem;color:var(--red-bright);margin:0 0 1rem;font-weight:600}
+.team{max-width:820px;margin:0 auto 2rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem 2rem;text-align:center}
+.team div{border-top:1px solid #2a1418;padding-top:.8rem}
+.team dt{font-family:var(--label);letter-spacing:.18em;text-transform:uppercase;font-size:.75rem;color:var(--muted);margin-bottom:.2rem}
+.team dd{color:var(--bone);font-size:1.1rem;line-height:1.4}
+.team .cast{grid-column:1/-1}
+.social{display:flex;justify-content:center;gap:.8rem;flex-wrap:wrap;margin:0 0 2rem;list-style:none;padding:0}
+.social a,.social button{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:1px solid #6b2a33;background:var(--card);color:var(--bone);cursor:pointer;transition:background .2s,border-color .2s}
+.social a:hover,.social button:hover,.social a:focus-visible,.social button:focus-visible{background:var(--red);border-color:#fff}
+.social svg{width:24px;height:24px;fill:currentColor}
+body.hc .social a,body.hc .social button,body.hc .team div{border-color:#fff;background:#000}
+@media(max-width:640px){nav .wrap{flex-direction:column;gap:.3rem}nav ul{gap:.2rem .9rem;justify-content:center}section{padding:3.5rem 0}}
+/* DATA DE LANÇAMENTO */
+.release{display:inline-block;margin:0 auto 1.8rem;padding:.6rem 1.6rem;border:1px solid var(--red);background:rgba(179,0,27,.15);font-family:var(--label);letter-spacing:.25em;text-transform:uppercase;font-size:.85rem}
+.release strong{display:block;font-family:var(--display);font-size:clamp(1.4rem,4vw,2rem);letter-spacing:.08em;color:var(--red-bright);margin-top:.2rem}
+/* KIT PROMOCIONAL */
+.kit{display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center;text-align:left;margin-top:3rem;border:1px solid var(--red);background:var(--card);padding:1.5rem;box-shadow:0 0 40px rgba(179,0,27,.25)}
+.kit img{width:100%;height:auto;display:block;border:1px solid #3a1a20}
+.kit h3{font-family:var(--display);font-size:clamp(1.3rem,3vw,1.8rem);line-height:1.25;margin-bottom:.8rem}
+.kit ul{margin:.8rem 0 1rem 1.2rem}
+.kit li::marker{color:var(--red-bright)}
+.kit .btn{margin-top:.8rem}
+@media(max-width:760px){.kit{grid-template-columns:1fr}}
+body.hc .kit{border-color:#fff;background:#000}
+/* RESERVA */
+.reserva-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:2rem;align-items:start}
+.form-box,.local-box{background:var(--card);border:1px solid var(--red);padding:1.6rem}
+.form-box h3,.local-box h3{font-family:var(--display);font-size:1.3rem;margin-bottom:1rem}
+.field{margin-bottom:1.1rem}
+.field label,.legend{display:block;font-family:var(--label);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35rem}
+.field label .req{color:var(--red-bright)}
+.field input[type=text],.field input[type=email],.field input[type=tel],.field select{width:100%;min-height:48px;padding:.6rem .9rem;background:#0a0708;color:var(--bone);border:1px solid #6b2a33;font-family:var(--serif);font-size:1.1rem}
+.field input:focus,.field select:focus{border-color:#fff}
+.field .help{font-size:.95rem;color:var(--muted);margin-top:.25rem}
+.field .err{display:none;color:#ffb3bd;font-size:1rem;margin-top:.3rem}
+.field.invalid .err{display:block}
+.field.invalid input,.field.invalid select{border-color:#ff8a99;border-width:2px}
+.check{display:flex;gap:.7rem;align-items:flex-start;margin-bottom:1rem;font-size:1.05rem}
+.check input{width:24px;height:24px;margin-top:.15rem;accent-color:#b3001b;flex:none}
+.form-status{margin-top:1rem;padding:1rem;border:1px solid #fff;display:none}
+.form-status.show{display:block}
+.form-status.ok{background:rgba(40,120,60,.25)}
+.form-status.fail{background:rgba(179,0,27,.3)}
+.local-box address{font-style:normal;margin-bottom:1rem}
+.local-box address strong{font-family:var(--display);display:block;font-size:1.15rem;margin-bottom:.3rem}
+.map{aspect-ratio:4/3;border:1px solid #3a1a20;margin:1rem 0}
+.map iframe{width:100%;height:100%;border:0;filter:grayscale(.4) contrast(1.05)}
+.local-box dl{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1rem;margin-bottom:1rem}
+.local-box dt{font-family:var(--label);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:var(--red-bright)}
+@media(max-width:860px){.reserva-grid{grid-template-columns:1fr}}
+body.hc .form-box,body.hc .local-box{border-color:#fff;background:#000}
+body.hc .field input,body.hc .field select{background:#000;border-color:#fff}
+/* ===== ACESSIBILIDADE ===== */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-9999px;top:0;background:#fff;color:#000;padding:.8rem 1.2rem;z-index:1000;font-family:var(--label)}
+.skip:focus{left:0}
+:focus-visible{outline:3px solid #fff;outline-offset:3px;box-shadow:0 0 0 6px var(--red)}
+.btn,nav a{min-height:44px;display:inline-flex;align-items:center;justify-content:center}
+.a11y-bar{position:fixed;right:.8rem;bottom:.8rem;z-index:90;display:flex;gap:.4rem;flex-wrap:wrap;background:#000;border:1px solid var(--red);padding:.5rem;max-width:calc(100vw - 1.6rem)}
+.a11y-bar button{font-family:var(--label);font-size:.8rem;min-width:44px;min-height:44px;padding:0 .8rem;background:#1b1114;color:#fff;border:1px solid #6b2a33;cursor:pointer}
+.a11y-bar button:hover,.a11y-bar button[aria-pressed="true"]{background:var(--red);border-color:#fff}
+.transcript{max-width:900px;margin:1.5rem auto 0;border:1px solid #3a1a20;background:var(--card)}
+.transcript summary{cursor:pointer;padding:1rem 1.4rem;font-family:var(--label);letter-spacing:.1em;min-height:44px}
+.transcript div{padding:0 1.4rem 1.2rem;color:#d9c9c0}
+body.hc{--black:#000;--coal:#000;--card:#000;--bone:#fff;--muted:#fff;--red:#ff4d63;--red-bright:#ff8a99}
+body.hc .info,body.hc .photo,body.hc .partner,body.hc .transcript{border-color:#fff;background:#000}
+body.hc .hero,body.hc .cta{background:#000}
+body.hc .hero::before{display:none}
+body.hc a{text-decoration:underline}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+@media(prefers-contrast:more){body{--muted:#fff}}
+
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo principal</a>
+
+<nav aria-label="Navegação principal">
+  <div class="wrap">
+    <a href="#inicio" class="brand">Último Baile</a>
+    <ul>
+      <li><a href="#sinopse">Sinopse</a></li>
+      <li><a href="#teaser">Teaser</a></li>
+      <li><a href="#ficha">Ficha</a></li>
+      <li><a href="#galeria">Imagens</a></li>
+      <li><a href="#parceiros">Parceiros</a></li>
+      <li><a href="#reserva">Reserva</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<main id="conteudo" tabindex="-1">
+<header class="hero" id="inicio">
+  <div class="wrap">
+    <!-- LOGO: máscaras de teatro + moldura barroca (SVG). Para usar sua própria logo, troque o <svg> por: <img class="logo" src="imagens/logo.png" alt="Logo A Última Dança"> -->
+    <svg class="logo" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="logo-t"><title id="logo-t">Logo de Último Baile: duas máscaras de teatro, uma vermelha sorrindo e uma preta triste, sob um ornamento barroco</title>
+      <defs><lineargradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e10a2a"/><stop offset="1" stop-color="#7a0013"/></lineargradient></defs>
+      <!-- ornamento barroco superior -->
+      <path d="M40 22 C70 4 110 6 150 22 C190 6 230 4 260 22" fill="none" stroke="#b3001b" stroke-width="2"/>
+      <path d="M150 22 C140 34 128 30 124 40 M150 22 C160 34 172 30 176 40" fill="none" stroke="#b3001b" stroke-width="2"/>
+      <circle cx="150" cy="18" r="4" fill="#e10a2a"/>
+      <!-- máscara vermelha (esquerda, sorriso) -->
+      <g transform="rotate(-10 105 105)">
+        <path d="M60 60 C60 44 150 44 150 60 C150 120 128 160 105 160 C82 160 60 120 60 60Z" fill="url(#g)" stroke="#efe6df" stroke-width="2"/>
+        <path d="M76 82 Q88 72 100 84 Q88 90 76 82Z" fill="#0a0708"/>
+        <path d="M110 84 Q122 72 134 82 Q122 90 110 84Z" fill="#0a0708"/>
+        <path d="M82 122 Q105 142 128 122" fill="none" stroke="#0a0708" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <!-- máscara preta (direita, tristeza) -->
+      <g transform="rotate(10 195 115)">
+        <path d="M150 70 C150 54 240 54 240 70 C240 130 218 170 195 170 C172 170 150 130 150 70Z" fill="#0a0708" stroke="#e10a2a" stroke-width="2.5"/>
+        <path d="M166 92 Q178 100 190 92 Q178 84 166 92Z" fill="#e10a2a"/>
+        <path d="M200 92 Q212 100 224 92 Q212 84 200 92Z" fill="#e10a2a"/>
+        <path d="M172 146 Q195 128 218 146" fill="none" stroke="#e10a2a" stroke-width="4" stroke-linecap="round"/>
+      </g>
+      <!-- fitas -->
+      <path d="M150 54 C140 40 120 44 118 52 M150 54 C160 40 180 44 182 52" fill="none" stroke="#efe6df" stroke-width="1.5"/>
+      <path d="M60 188 C100 176 200 176 240 188" fill="none" stroke="#b3001b" stroke-width="2"/>
+    </svg>
+    <p class="kicker">Curta-metragem · Suspense investigativo</p>
+    <h1>Último <span>Baile</span></h1>
+    <p class="tagline">Uma morte, muitas suspeitas e uma verdade inesperada.</p>
+    <p class="release">Lançamento<strong><time datetime="2026-11-06">11 de novembro de 2026</time></strong></p>
+    <div class="btns">
+      <a class="btn solid" href="#reserva">Reservar pré-venda</a>
+      <a class="btn ghost" href="#teaser">Assistir ao teaser</a>
+      <a class="btn ghost" href="#sinopse">Conhecer a história</a>
+    </div>
+  </div>
+</header>
+
+<!-- SINOPSE -->
+<section class="synopsis" id="sinopse">
+  <div class="wrap">
+    <h2>Sinopse</h2>
+    <div class="ornament" aria-hidden="true">❖</div>
+  
+    <div class="shortsyn">Após a morte misteriosa de uma estudante durante uma festa escolar, uma investigação entre amigos revela que nem todos são quem parecem ser.</div>
+  </div>
+</section>
+
+<!-- TEASER -->
+<section id="teaser">
+  <div class="wrap">
+    <h2>Teaser</h2>
+    <div class="ornament" aria-hidden="true">❖</div>
+    <div class="video">
+      <!-- TEASER: troque SEU_ID_DO_VIDEO pelo código do vídeo do YouTube.
+           Ex.: link https://www.youtube.com/watch?v=abc123XYZ  →  ID = abc123XYZ -->
+      <iframe src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO?cc_load_policy=1&hl=pt-BR&cc_lang_pref=pt" title="Teaser — A Última Dança"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <p class="hint">Teaser em breve. Legendas em português ativadas por padrão (adicione-as no YouTube).</p>
+    <details class="transcript">
+      <summary>Transcrição e audiodescrição do teaser</summary>
+      <div><!-- Cole aqui a transcrição das falas e a descrição das cenas (audiodescrição em texto). -->
+        <p>Texto alternativo do teaser a ser inserido aqui.</p></div>
+    </details>
+  </div>
+</section>
+
+<!-- FICHA TÉCNICA -->
+<section id="ficha" style="background:var(--coal)">
+  <div class="wrap">
+    <h2>Sobre o Curta</h2>
+    <div class="ornament" aria-hidden="true">❖</div>
+    <div class="info-grid">
+      <div class="info"><b>Título</b>Último Baile</div>
+      <div class="info"><b>Gênero</b>Suspense / Mistério / Drama policial</div>
+      <div class="info"><b>Formato</b>Curta-metragem</div>
+      <div class="info"><b>Data de lançamento</b><time datetime="2026-11-06">11 de novembro de 2026</time></div>
+      <div class="info"><b>Duração</b>Aproximadamente 4 minutos</div>
+      <div class="info"><b>Classificação indicativa</b>livre</div>
+      <div class="info"><b>Idioma</b>Português</div>
+      <div class="info wide"><b>Ambientação</b>Uma festa.</div>
+      <div class="info wide"><b>Tema central</b>Mentira, manipulação, culpa e busca pela verdade.</div>
+      <div class="info wide"><b>Equipe</b>Isabela de Oliveira, Bryan Sanches, Ellen Nogueira, Gabriela Arcanjo, Beatriz Rocha, Julia Damasceno Baltar e Vittor Hugo Nascimento </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria" style="background:var(--coal)">
+  <div class="wrap">
+    <h2>Imagens do Projeto</h2>
+    <div class="ornament" aria-hidden="true">❖</div>
+    <div class="gallery">
+      <!-- Troque cada bloco por: <div class="photo"><img src="imagens/cena1.jpg" alt="Cena do curta"></div> -->
+       <div class="photo"><img src="C:\Users\julia.baltar\Desktop\Julia\pessoal\FACULDADE\Imagem_2.png" alt="Cena do curta"></div> 
+      <div class="photo"><img src="C:\Users\julia.baltar\Desktop\Julia\pessoal\FACULDADE\Imagem_1.png" alt="Cena do curta"></div>
+      <div class="photo"><img src="C:\Users\julia.baltar\Desktop\Julia\pessoal\FACULDADE\Imagem_3.png" alt="Cena do curta"></div>
+      <div class="photo"><img src="C:\Users\julia.baltar\Desktop\Julia\pessoal\FACULDADE\Imagem_4.png" alt="Cena do curta"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAMADA -->
+<section class="cta">
+  <div class="wrap">
+    <blockquote>Uma morte, <em>muitas suspeitas</em> e uma verdade inesperada.</blockquote>
+    <a class="btn solid" href="#teaser">Assista ao teaser</a>
+  </div>
+</section>
+
+<!-- PARCEIROS -->
+<section class="partners" id="parceiros">
+  <div class="wrap">
+    <h2>Parceiros e Patrocinadores</h2>
+    <div class="ornament" aria-hidden="true">❖</div>
+    <div class="partner-row">
+      <div class="partner">
+        <span>Patrocínio</span>
+        <!-- Para usar o logo: <img src="imagens/redbull.png" alt="Red Bull"> -->
+        <strong>Red Bull</strong>
+      </div>
+    </div>
+
+    <article class="kit" aria-labelledby="kit-titulo">
+      <img src="C:\Users\julia.baltar\Desktop\Julia\pessoal\FACULDADE/KitPromocional_ÚltimoBaile.png" width="1672" height="941"
+        alt="Kit promocional de A Última Dança: caixa preta aberta com uma lata de Red Bull, uma máscara de teatro metade vermelha e metade preta e um envelope-convite com a logo do filme, sobre veludo vermelho.">
+      <div>
+        <h3 id="kit-titulo">Press Kit exclusivo de o Último Baile</h3>
+        <p>Garanta sua reserva na pré-venda pelo nosso landing page e concorra a um Press Kit exclusivo de o Último Baile!</p>
+        <p>O kit promocional acompanha:</p>
+        <ul>
+          <li>Uma lata de Red Bull;</li>
+          <li>Uma máscara temática;</li>
+          <li>Um convite universal para o curta.</li>
+        </ul>
+        <p><em>Uma experiência especial para entrar no clima do mistério!</em></p>
+        <a class="btn solid" href="#reserva">Reservar na pré-venda</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- RESERVA DA PRÉ-VENDA -->
+<section id="reserva" style="background:var(--coal)" aria-labelledby="reserva-titulo">
+  <div class="wrap">
+    <h2 id="reserva-titulo">Reserva da Pré-venda</h2>
+    <div class="ornament" aria-hidden="true">❖</div>
+    <p style="text-align:center;max-width:700px;margin:-1rem auto 2.5rem">Reserve seu lugar na estreia de <strong>Último Baile</strong> e concorra ao Press Kit exclusivo.</p>
+    <div class="reserva-grid">
+
+      <div class="form-box">
+        <h3>Faça sua reserva</h3>
+        <!--
+          ENVIO DOS DADOS: o formulário precisa de um serviço para receber as respostas.
+          Opção simples: crie um formulário em https://formspree.io e cole o endereço em FORM_ENDPOINT (no script, mais abaixo).
+          Enquanto FORM_ENDPOINT estiver vazio, a página só mostra a confirmação (modo demonstração, nada é salvo).
+        -->
+        <form id="formReserva" novalidate>
+          <p class="help" style="margin-bottom:1rem">Campos com <span class="req" style="color:var(--red-bright)">*</span> são obrigatórios.</p>
+
+          <div class="field">
+            <label for="nome">Nome completo <span class="req" aria-hidden="true">*</span></label>
+            <input type="text" id="nome" name="nome" autocomplete="name" required aria-describedby="nome-err">
+            <p class="err" id="nome-err">Informe seu nome completo.</p>
+          </div>
+
+          <div class="field">
+            <label for="email">E-mail <span class="req" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="email-help email-err">
+            <p class="help" id="email-help">Enviaremos a confirmação para este e-mail.</p>
+            <p class="err" id="email-err">Informe um e-mail válido, como nome@exemplo.com.</p>
+          </div>
+
+          <div class="field">
+            <label for="tel">Telefone / WhatsApp</label>
+            <input type="tel" id="tel" name="telefone" autocomplete="tel" inputmode="tel" aria-describedby="tel-help">
+            <p class="help" id="tel-help">Opcional. Ex.: (11) 91234-5678</p>
+          </div>
+
+          <div class="field">
+            <label for="qtd">Quantidade de ingressos <span class="req" aria-hidden="true">*</span></label>
+            <select id="qtd" name="quantidade" required aria-describedby="qtd-err">
+              <option value="">Selecione</option>
+              <option value="1">1 ingresso</option>
+              <option value="2">2 ingressos</option>
+              <option value="3">3 ingressos</option>
+              <option value="4">4 ingressos</option>
+            </select>
+            <p class="err" id="qtd-err">Escolha a quantidade de ingressos.</p>
+          </div>
+
+          <div class="check">
+            <input type="checkbox" id="sorteio" name="press_kit" value="sim">
+            <label for="sorteio">Quero concorrer ao Press Kit exclusivo de Último Baile.</label>
+          </div>
+
+          <div class="field" style="margin-bottom:1rem">
+            <div class="check" style="margin-bottom:0">
+              <input type="checkbox" id="lgpd" name="consentimento" required aria-describedby="lgpd-err">
+              <label for="lgpd">Concordo em receber contato sobre a reserva e que meus dados sejam usados apenas para este fim. <span class="req" aria-hidden="true" style="color:var(--red-bright)">*</span></label>
+            </div>
+            <p class="err" id="lgpd-err">É necessário concordar para enviar a reserva.</p>
+          </div>
+
+          <button type="submit" class="btn solid" style="width:100%;cursor:pointer;font-family:var(--label)">Enviar reserva</button>
+          <div id="formStatus" class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+        </form>
+      </div>
+
+      <aside class="local-box" aria-labelledby="local-titulo">
+        <h3 id="local-titulo">Local da estreia</h3>
+        <address>
+          <strong>Cine Belas Artes</strong>
+          R. da Consolação, 2423 – Consolação<br>
+          São Paulo – SP, 01301-100
+        </address>
+        <dl>
+          <dt>Data</dt><dd><time datetime="2026-11-06">11 de novembro de 2026</time></dd>
+          <dt>Horário</dt><dd><time datetime="20:00">20h</time></dd>
+        </dl>
+        <div class="map">
+          <iframe title="Mapa: Cine Belas Artes, Rua da Consolação, 2423, São Paulo" loading="lazy"
+            src="https://www.google.com/maps?q=R.+da+Consola%C3%A7%C3%A3o,+2423,+S%C3%A3o+Paulo+-+SP&amp;output=embed"></iframe>
+        </div>
+        <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&amp;query=R.+da+Consola%C3%A7%C3%A3o,+2423,+S%C3%A3o+Paulo+-+SP" target="_blank" rel="noopener noreferrer">Abrir no Google Maps<span class="sr-only"> (abre em nova aba)</span></a>
+      </aside>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span class="brand">Último Baile</span>
+  Curta-metragem de suspense · Português · ~4 min · Lançamento em 11/11/2026<br>
+  <p class="about">O filme “Último Baile” é um curta produzido como um trabalho semestral para o curso de Publicidade e Propaganda da UNICID.</p>
+
+  <h3>Equipe</h3>
+  <dl class="team">
+    <div><dt>Bryan Sanches, Vittor Hugo Nascimento, Isabela de Oliveira, Ellen Nogueira e Gabriela Arcanjo, Júlia Baltar e Beatriz Rocha </div></dt>
+	</dl>
+
+  <!-- REDES SOCIAIS: troque cada href="#" pelo link do perfil -->
+  <ul class="social" aria-label="Redes sociais e acessibilidade">
+    <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="YouTube (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg></a></li>
+    <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="TikTok (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19.6 6.7a5.3 5.3 0 0 1-3.2-1.1 5.3 5.3 0 0 1-2-3.6h-3.5v13.3a2.9 2.9 0 1 1-2-2.8V7.1a6.4 6.4 0 1 0 5.5 6.3V9a8.8 8.8 0 0 0 5.2 1.7V6.7z"/></svg></a></li>
+    <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></a></li>
+    <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4H7.1V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12z"/></svg></a></li>
+    <li><a href="#" target="_blank" rel="noopener noreferrer" aria-label="Google (abre em nova aba)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.2 10.2v3.9h5.5c-.2 1.4-1.7 4.1-5.5 4.1a6.2 6.2 0 0 1 0-12.4c2 0 3.3.9 4.1 1.6l2.7-2.6A10 10 0 0 0 12.2 2a10 10 0 1 0 0 20c5.8 0 9.6-4 9.6-9.8 0-.7-.1-1.2-.2-2H12.2z"/></svg></a></li>
+    <li><button type="button" id="a11yIcon" aria-label="Acessibilidade: ir para as opções de texto e contraste"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM4 8.5l.4-1.5c3.5 1 11.7 1 15.2 0l.4 1.5c-1.4.4-3.2.7-5 .9v3.4l1.9 7.7-1.6.4L12 14.5l-2.3 6.4-1.6-.4L10 12.8V9.4c-1.8-.2-3.6-.5-5-.9z"/></svg></button></li>
+  </ul>
+
+  © 2026 — Todos os direitos reservados.
+</footer>
+
+
+<!-- BARRA DE ACESSIBILIDADE -->
+<div class="a11y-bar" role="group" aria-label="Opções de acessibilidade">
+  <button type="button" id="fontMinus" aria-label="Diminuir tamanho do texto">A−</button>
+  <button type="button" id="fontReset" aria-label="Tamanho padrão do texto">A</button>
+  <button type="button" id="fontPlus" aria-label="Aumentar tamanho do texto">A+</button>
+  <button type="button" id="hcToggle" aria-pressed="false">Alto contraste</button>
+</div>
+
+<!-- VLIBRAS: tradução para Libras (requer internet) -->
+<div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  try{ new window.VLibras.Widget('https://vlibras.gov.br/app'); }catch(e){}
+  (function(){
+    var size=100, root=document.documentElement, body=document.body;
+    function set(v){ size=Math.max(80,Math.min(160,v)); root.style.fontSize=size+'%'; try{localStorage.setItem('ud-size',size)}catch(e){} }
+    document.getElementById('fontPlus').onclick=function(){set(size+10)};
+    document.getElementById('fontMinus').onclick=function(){set(size-10)};
+    document.getElementById('fontReset').onclick=function(){set(100)};
+    document.getElementById('a11yIcon').onclick=function(){document.getElementById('fontPlus').focus()};
+    var hc=document.getElementById('hcToggle');
+    function setHC(on){ body.classList.toggle('hc',on); hc.setAttribute('aria-pressed',on); try{localStorage.setItem('ud-hc',on?'1':'0')}catch(e){} }
+    hc.onclick=function(){setHC(!body.classList.contains('hc'))};
+    try{ var sv=parseInt(localStorage.getItem('ud-size')); if(sv) set(sv); if(localStorage.getItem('ud-hc')==='1') setHC(true); }catch(e){}
+  })();
+</script>
+
+<script>
+(function(){
+  // Cole aqui o endereço do seu serviço de formulário (ex.: https://formspree.io/f/xxxxxxx). Vazio = modo demonstração.
+  var FORM_ENDPOINT = "";
+  var form=document.getElementById('formReserva'), status=document.getElementById('formStatus');
+  function setErr(el,bad){ var f=el.closest('.field'); f.classList.toggle('invalid',bad); el.setAttribute('aria-invalid',bad?'true':'false'); }
+  function validate(){
+    var ok=true, first=null;
+    var nome=form.nome, email=form.email, qtd=form.quantidade, lgpd=form.consentimento;
+    var checks=[
+      [nome, nome.value.trim().split(/\s+/).length<2],
+      [email, !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email.value.trim())],
+      [qtd, !qtd.value],
+      [lgpd, !lgpd.checked]
+    ];
+    checks.forEach(function(c){ setErr(c[0],c[1]); if(c[1]){ ok=false; if(!first) first=c[0]; } });
+    if(first) first.focus();
+    return ok;
+  }
+  function show(msg,cls){ status.className='form-status show '+cls; status.textContent=msg; status.focus(); }
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!validate()){ show('Há campos com erro. Corrija os itens destacados e envie novamente.','fail'); return; }
+    var ok='Reserva recebida! Enviaremos a confirmação para o seu e-mail.';
+    if(!FORM_ENDPOINT){ show(ok+' (Modo demonstração: os dados ainda não estão sendo salvos.)','ok'); form.reset(); return; }
+    fetch(FORM_ENDPOINT,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(form)})
+      .then(function(r){ if(r.ok){ show(ok,'ok'); form.reset(); } else { throw 0; } })
+      .catch(function(){ show('Não foi possível enviar agora. Tente novamente em instantes.','fail'); });
+  });
+  ['nome','email','qtd','lgpd'].forEach(function(id){ var el=document.getElementById(id); ['input','change'].forEach(function(ev){ el.addEventListener(ev,function(){ setErr(el,false); }); }); });
+})();
+</script>
+</body>
+</html>
